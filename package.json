@@ -4,15 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node index.ts"
+    "start": "node dist/main.js",
+    "build": "webpack --config webpack.config.js"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@casual-simulation/aux-vm-node": "^0.9.20"
+    "@casual-simulation/aux-vm-node": "^0.9.20",
+    "@casual-simulation/causal-tree-client-socketio": "^0.9.20"
   },
   "devDependencies": {
+    "ts-loader": "^6.0.4",
     "ts-node": "^8.3.0",
-    "typescript": "^3.5.3"
+    "typescript": "^3.5.3",
+    "webpack": "^4.39.0",
+    "webpack-cli": "^3.3.6",
+    "webpack-node-externals": "^1.7.2"
   }
 }

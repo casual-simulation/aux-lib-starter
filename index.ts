@@ -1,5 +1,4 @@
-import { RemoteNodeAuxChannel } from './RemoteNodeAuxChannel';
-import { NodeSimulation } from '@casual-simulation/aux-vm-node';
+import { nodeSimulationForRemote } from '@casual-simulation/aux-vm-node/managers/NodeSimulationFactories';
 import { AuxUser, Simulation } from '@casual-simulation/aux-vm';
 import repl from 'repl';
 
@@ -20,26 +19,15 @@ async function start() {
         isGuest: false
     };
 
-    // The config values that the RemoteNodeAuxChannel
-    // needs. This indicates where to connect and what channel to load.
-    // This is all gonna get cleaned up since some values are repeated.
-    const config = {
-        config: { isBuilder: false, isPlayer: false },
-        host: 'https://auxplayer.com',
-        id: 'https://auxplayer.com/*/hello',
-        treeName: 'aux-hello'
-    };
-
-    // The channel connection.
-    // This is a low-level abstraction for an AUX channel and manages
-    // authentication, syncing, and scripts/formulas.
-    const channel = new RemoteNodeAuxChannel(user, config);
-
     // The simulation.
     // This is a high-level abstraction for an AUX virtual machine and makes it easier to 
     // use AUXes.
-    // Ignore the cast.
-    const sim = new NodeSimulation(<any>channel, config.id, config.config);
+    const sim = nodeSimulationForRemote(
+        'https://auxplayer.com',
+        user,
+        'hello',
+        { isBuilder: false, isPlayer: false }
+    );
 
     // Initialize the simulation.
     // This in turn will initialize the channel and everything else needed to connect to the aux.

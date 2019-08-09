@@ -10,8 +10,8 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@casual-simulation/aux-vm-node": "^0.9.20",
-    "@casual-simulation/causal-tree-client-socketio": "^0.9.20"
+    "@casual-simulation/aux-vm-node": "^0.9.26",
+    "@casual-simulation/causal-tree-client-socketio": "^0.9.21"
   },
   "devDependencies": {
     "ts-loader": "^6.0.4",

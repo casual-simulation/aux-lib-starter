@@ -14,11 +14,11 @@
     "@casual-simulation/causal-tree-client-socketio": "^0.9.21"
   },
   "devDependencies": {
-    "ts-loader": "^6.0.4",
+    "ts-loader": "^9.4.2",
     "ts-node": "^8.3.0",
     "typescript": "^3.5.3",
-    "webpack": "^4.39.0",
-    "webpack-cli": "^3.3.6",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
     "webpack-node-externals": "^1.7.2"
   }
 }
